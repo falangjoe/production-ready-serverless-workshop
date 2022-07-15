@@ -27,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@master
         with:
           aws-region: us-east-1
-          role-to-assume: arn:aws:iam::993755300009:role/GitHubActionsRole
+          role-to-assume: arn:aws:iam::993755300009:role/FalangJoeGitHubActionsRole
           role-session-name: GithubActionsSession
 
       - name: npm ci
