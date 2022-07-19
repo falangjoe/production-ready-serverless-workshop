@@ -52,6 +52,8 @@ const putReqs = restaurants.map(x => ({
   }
 }))
 
+console.log(process.env.restaurants_table);
+
 const req = {
   RequestItems: {
     [process.env.restaurants_table]: putReqs
