@@ -12,6 +12,9 @@ custom:
       - CognitoUserPoolServerClientId
     output:
       file: ./.env-outputs
+  logLevel:
+    prod: INFO
+    default: DEBUG
 
 provider:
   name: aws
@@ -46,6 +49,7 @@ provider:
     rest_api_url: !Sub https://${ApiGatewayRestApi}.execute-api.${AWS::Region}.amazonaws.com/${sls:stage}
     serviceName: ${self:service}
     stage: ${sls:stage}
+    LOG_LEVEL: ${self:custom.logLevel.${sls:stage}, self:custom.logLevel.default}
 
 
 functions:
