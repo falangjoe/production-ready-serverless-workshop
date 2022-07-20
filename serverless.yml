@@ -14,7 +14,7 @@ custom:
       file: ./.env-outputs
   logLevel:
     prod: INFO
-    default: DEBUG
+    default: INFO
 
 provider:
   name: aws
@@ -50,6 +50,8 @@ provider:
     serviceName: ${self:service}
     stage: ${sls:stage}
     LOG_LEVEL: ${self:custom.logLevel.${sls:stage}, self:custom.logLevel.default}
+    SAMPLE_DEBUG_LOG_RATE: 0.1
+
 
 
 functions:
