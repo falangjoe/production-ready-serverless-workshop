@@ -1,3 +1,7 @@
+const AWSXRay = require('aws-xray-sdk-core')
+AWSXRay.captureHTTPsGlobal(require('https'))
+
+
 const fs = require("fs")
 const Mustache = require('mustache')
 const http = require('axios')
